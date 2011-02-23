@@ -1,0 +1,33 @@
+<% content_for :head do -%>
+<%= stylesheet_link_tag 'search_tag_cloud.css' %>
+<% end -%>
+
+<div id="tag_cloud">
+<% @search_records_cloud.each do |b| %>
+<span style="font-size:<%= b[0] %>px;"><%= b[1] %></span>
+<% end -%>
+</div>
+
+<table id="search_results" class="tablesorter">
+	<thead>
+		<tr>
+			<th>Search Term</th>
+			<th>Count</th>
+		</tr>
+	</thead>
+	<tbody>
+	<% @search_records.each do |b| %>
+		<tr>
+			<td><%= b[1] %></td>
+			<td><%= b[0] %></td>
+		</tr>
+	<% end -%>
+	</tbody>
+</table>
+
+<script type="text/javascript">
+$(function() {
+	$('#search_results').tablesorter();
+});
+</script>
+<script src="/javascripts/jquery.tablesorter.min.js"></script>
