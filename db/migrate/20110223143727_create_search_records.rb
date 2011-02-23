@@ -3,6 +3,7 @@ class CreateSearchRecords < ActiveRecord::Migration
     create_table :search_records do |t|
       t.string :term
       t.integer :count, :null => false, :default => 0
+      t.string :stype, :null => false, :default => 'phrase'
     end
   end
 
