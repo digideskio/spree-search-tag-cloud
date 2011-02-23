@@ -11,6 +11,7 @@
 		<td colspan="2">
 			<% @results.each do |k, v| %>
 			<div id="region_<%= k.to_s %>">
+				<h3><%= k.to_s %> Tag Cloud:</h3>
 				<div id="tag_cloud">
 					<% v[:tag_cloud].each do |b| %>
 					<span style="font-size:<%= b[0] %>px;"><%= b[1] %></span>
@@ -19,7 +20,7 @@
 				<table id="search_results_<%= k.to_s %>" class="tablesorter">
 					<thead>
 						<tr>
-							<th>Search Term</th>
+							<th width="50%">Search Term</th>
 							<th>Count</th>
 						</tr>
 					</thead>
